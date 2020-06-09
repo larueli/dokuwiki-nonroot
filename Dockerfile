@@ -4,7 +4,7 @@ LABEL maintainer="ivann.laruelle@gmail.com"
 
 ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
 
-RUN curl -L https://github.com/splitbrain/dokuwiki/archive/release_candidate_2020-06-01.tar.gz --output dokuwiki.tar.gz && tar -xf dokuwiki.tar.gz --strip 1 -C /var/www/html && rm dokuwiki.tar.gz && \
+RUN curl -L https://github.com/splitbrain/dokuwiki/archive/release_candidate_2_2020-06-01.tar.gz --output dokuwiki.tar.gz && tar -xf dokuwiki.tar.gz --strip 1 -C /var/www/html && rm dokuwiki.tar.gz && \
     chmod uga+x /usr/local/bin/install-php-extensions && sync && \
     apt-get update && apt-get install -y vim libcap2-bin rsync nano && \
     install-php-extensions gd ldap pdo_mysql zip intl imagick && \
