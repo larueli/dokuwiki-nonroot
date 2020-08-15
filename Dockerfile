@@ -6,7 +6,7 @@ ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/mas
 
 RUN curl -L https://github.com/splitbrain/dokuwiki/archive/release_stable_2020-07-29.tar.gz --output dokuwiki.tar.gz && tar -xf dokuwiki.tar.gz --strip 1 -C /var/www/html && rm dokuwiki.tar.gz && \
     chmod uga+x /usr/local/bin/install-php-extensions && sync && \
-    apt-get update && apt-get install -y vim libcap2-bin rsync nano && \
+    apt-get update && apt-get install -y vim zip unzip libcap2-bin rsync nano && \
     install-php-extensions gd ldap pdo_mysql zip intl imagick && \
     apt-get autoremove -y && a2enmod rewrite && \
     chgrp -R 0 /var/www/html && chmod g+rwx -R /var/www/html && setcap 'cap_net_bind_service=+ep' $(which apache2)
