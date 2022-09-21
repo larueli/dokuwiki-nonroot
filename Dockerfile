@@ -1,6 +1,6 @@
-FROM larueli/php-base-image:7.4
+FROM larueli/php-base-image:8.1
 
-ARG DOKUWIKI_VERSION=release_stable_2020-07-29
+ARG DOKUWIKI_VERSION=release_stable_2022-07-31a
 ENV DOKUWIKI_VERSION=${DOKUWIKI_VERSION}
 
 COPY deploy.sh /docker-entrypoint-init.d/
